@@ -38,16 +38,15 @@ Pastikan Anda telah menginstal Docker dan Docker Compose di mesin Anda.
 
 ## 1. Clone repositori ini 
 
-  	 ```bash
  	  git clone https://github.com/MarvelStudioXII/dbAnggota.git
-  	 cd dbAnggota
+  	  cd dbAnggota
 
 ## 2. Setup backend
 
 	- Masuk ke direktoru 'backend'
 	cd backend
 	- Buat file .env dan tambahkan konfigurasi database Anda
-	```bash
+	
 	DB_HOST=db
 	DB_USER=root
 	DB_PASSWORD=myp4ssword
@@ -65,7 +64,6 @@ Pastikan Anda telah menginstal Docker dan Docker Compose di mesin Anda.
 	- Kembali ke direktori root projek
 	cd ..
 	- Jalankan Docker Compose
-	```bash
 	docker-compose up --build
  ## 5. Akses Aplikasi
 	- Frontend dapat diakses di http://localhost:3000
