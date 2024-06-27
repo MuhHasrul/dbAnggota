@@ -38,9 +38,9 @@ Pastikan Anda telah menginstal Docker dan Docker Compose di mesin Anda.
 
 ## 1. Clone repositori ini 
 
-   ```bash
-   git clone https://github.com/MarvelStudioXII/dbAnggota.git
-   cd dbAnggota
+  	 ```bash
+ 	  git clone https://github.com/MarvelStudioXII/dbAnggota.git
+  	 cd dbAnggota
 
 ## 2. Setup backend
 
