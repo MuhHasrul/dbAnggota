@@ -77,38 +77,38 @@ Dockerfile untuk backend terletak di backend/Dockerfile:
 # Gunakan image MySQL sebagai dasar
 FROM mysql:5.7
 
-# Salin skrip SQL ke dalam container
+## Salin skrip SQL ke dalam container
 COPY db.sql /docker-entrypoint-initdb.d/
 
-# Set environment variables
+## Set environment variables
 ENV MYSQL_ROOT_PASSWORD=yourpassword
 ENV MYSQL_DATABASE=dbAnggota
 
 ## Frontend
 Dockerfile untuk frontend terletak di frontend/Dockerfile:
-# Gunakan image Node.js sebagai dasar
+## Gunakan image Node.js sebagai dasar
 FROM node:14
 
-# Set working directory
+***Set working directory***
 WORKDIR /app
 
-# Salin package.json dan install dependencies
+***Salin package.json dan install dependencies***
 COPY package.json ./
 RUN npm install
 
-# Salin seluruh proyek
+***Salin seluruh proyek***
 COPY . .
 
-# Build aplikasi React
+***Build aplikasi React***
 RUN npm run build
 
-# Expose port
+***Expose port***
 EXPOSE 3000
 
-# Jalankan aplikasi
+***Jalankan aplikasi***
 CMD ["npm", "start"]
 
-## Docker-compose
+***Docker-compose***
 `docker-compose.yml` menghubungkan frontend dan backend:
 version: '3.8'
 
