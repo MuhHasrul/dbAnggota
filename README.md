@@ -36,13 +36,13 @@ Pastikan Anda telah menginstal Docker dan Docker Compose di mesin Anda.
 
 ## Setup dan Menjalankan Projek
 
-1. ## Clone repositori ini 
+## 1. Clone repositori ini 
 
    ```bash
    git clone https://github.com/MarvelStudioXII/dbAnggota.git
    cd dbAnggota
 
-2. ## Setup backend
+## 2. Setup backend
 
 	- Masuk ke direktoru 'backend'
 	cd backend
@@ -53,20 +53,21 @@ Pastikan Anda telah menginstal Docker dan Docker Compose di mesin Anda.
 	DB_PASSWORD=myp4ssword
 	DB_NAME=dbAnggota
 
-3. ## Setup Frontend
+ ## 3. Setup Frontend
 
 	- Masuk ke direktori frontend
 	cd frontend
 	- Install dependencies
 	npm install
-4. ## Jalankan dengan Docker Compose
+ 
+ ## 4. Jalankan dengan Docker Compose
 
 	- Kembali ke direktori root projek
 	cd ..
 	- Jalankan Docker Compose
 	```bash
 	docker-compose up --build
-5. ## Akses Aplikasi
+ ## 5. Akses Aplikasi
 	- Frontend dapat diakses di http://localhost:3000
 	- Backend API dapat diakses di http://localhost:5000
 
@@ -89,26 +90,26 @@ Dockerfile untuk frontend terletak di frontend/Dockerfile:
 ## Gunakan image Node.js sebagai dasar
 FROM node:14
 
-***Set working directory***
+### Set working directory
 WORKDIR /app
 
-***Salin package.json dan install dependencies***
+### Salin package.json dan install dependencies
 COPY package.json ./
 RUN npm install
 
-***Salin seluruh proyek***
+### Salin seluruh proyek
 COPY . .
 
-***Build aplikasi React***
+### Build aplikasi React
 RUN npm run build
 
-***Expose port***
+### Expose port
 EXPOSE 3000
 
-***Jalankan aplikasi***
+### Jalankan aplikasi
 CMD ["npm", "start"]
 
-***Docker-compose***
+### Docker-compose
 `docker-compose.yml` menghubungkan frontend dan backend:
 version: '3.8'
 
