@@ -11,22 +11,23 @@ Projek ini dibuat oleh MarvelStudioXII dengan tujuan untuk:
 
 ## Struktur Projek
 
-```bash
-dbAnggota/
-├── backend/
-│ ├── Dockerfile
-│ ├── src/
-│ ├── .env
-│ ├── db.sql
-│ └── ...
-├── frontend/
-│ ├── Dockerfile
-│ ├── src/
-│ ├── public/
-│ ├── package.json
-│ └── ...
-├── docker-compose.yml
-└── README.md
+	```bash
+	dbAnggota/
+	├── backend/
+	│ ├── Dockerfile
+	│ ├── src/
+	│ ├── .env
+	│ ├── db.sql
+	│ └── ...
+	├── frontend/
+	│ ├── Dockerfile
+	│ ├── src/
+	│ ├── public/
+	│ ├── package.json
+	│ └── ...
+	├── docker-compose.yml
+	└── README.md
+
 
 
 ## Prasyarat
@@ -111,35 +112,3 @@ CMD ["npm", "start"]
 `docker-compose.yml` menghubungkan frontend dan backend:
 version: '3.8'
 
-services:
-  db:
-    image: mysql:5.7
-    container_name: db
-    environment:
-      MYSQL_ROOT_PASSWORD: yourpassword
-      MYSQL_DATABASE: dbAnggota
-    volumes:
-      - ./backend/db.sql:/docker-entrypoint-initdb.d/db.sql
-    ports:
-      - "3306:3306"
-
-  backend:
-    build: ./backend
-    container_name: backend
-    environment:
-      DB_HOST: db
-      DB_USER: root
-      DB_PASSWORD: yourpassword
-      DB_NAME: dbAnggota
-    depends_on:
-      - db
-    ports:
-      - "5000:5000"
-
-  frontend:
-    build: ./frontend
-    container_name: frontend
-    ports:
-      - "3000:3000"
-    depends_on:
-      - backend
