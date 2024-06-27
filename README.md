@@ -40,6 +40,7 @@ Pastikan Anda telah menginstal Docker dan Docker Compose di mesin Anda.
    ```bash
    git clone https://github.com/MarvelStudioXII/dbAnggota.git
    cd dbAnggota
+
 2. **Setup backend**
 
 	- Masuk ke direktoru 'backend'
@@ -50,6 +51,7 @@ Pastikan Anda telah menginstal Docker dan Docker Compose di mesin Anda.
 	DB_USER=root
 	DB_PASSWORD=myp4ssword
 	DB_NAME=dbAnggota
+
 3. **Setup Frontend**
 
 	- Masuk ke direktori frontend
